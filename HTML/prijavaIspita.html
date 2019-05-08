@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Prijava ispita - studentska sluzba</title>
+
+  <link rel="stylesheet" type="text/css" href="../CSS/flip.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <button class="btnFlipClose">x</button>
+  <h1>Dobro dosli na portal za prijavu ispita</h1>
+  <h3 style="display:none;">Predjite misem preko karata da bi videli njihov sadrzaj</h3>
+  <p id="info" style="font-size:3vw;color:purple;font-weight: bold;"></p>
+  <div class="flip-container" id="flipIspit">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="../images/slicicaKompjutera.jpg" alt="Avatar">
+          <h1>Uputstvo</h1>
+          <h3>za upotrebu portala</h3>
+        </div>
+        <div class="flip-card-back">
+          <h1>Uputstvo za koriscenje portala</h1>
+          <p style="font-size:1.4vw;padding:1vw;"> Prilikom prvog prijavljivanja na portal, ostavicete svoje podatke
+            putem SignUp forme
+            <br>(ime, prezime, broj indeksa, i lozinka po izboru) i ti podaci ce biti smesteni na
+            Local Storage, sto ce vam omoguciti da se svaki sledeci put prijavite preko Login
+            forme samo uz odabranu lozinku i korisnicko ime (username) za koje cete koristiti
+            vaš broj indeksa (u formatu: 12345/12, dakle maksimum 5 cifara,pa kosa crta i iza crte tacno dve cifre).<br>
+            Tek nakon uspesnog logovanja mocicete da vidite svoj profil i da prijavite ispite.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" style="margin-left:25%;margin-top:-80vh;">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="../images/student2.png" alt="Avatar">
+          <h1>Sign Up forma</h1>
+          <h3>za prvo registrovanje na portalu</h3>
+          <p style="font-size:1.2vw;"><i>Da li vec imate nalog?<br>
+              Idite odmah na Login formu</i></p>
+        </div>
+        <div class="flip-card-back">
+          <h1 id="infoSF" style="font-size:2vw;">Sign Up forma</h1>
+          <div class="modal_container" id="modal">
+            <div class="modal" style="height: 90%;">
+              <span class="modal_heading" style="display:none;">
+                Unesite svoje podatke
+              </span>
+              <form method="POST">
+                Ime:<br><input type="text" id="firstname" required><br>
+                Prezime:<br><input type="text" id="lastname" required><br>
+                Broj indeksa:<br><input type="text" id="username" required><br>
+                Lozinka:<br><input type="password" id="pass" required><br>
+                Ponovi lozinku:<br><input type="password" id="pass2" required><br>
+                <input type="submit" id="btnRegister" class="btnRegister" value="SIGN UP"><br>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" style="margin-left:50%;margin-top:-80vh;">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="../images/exam2.PNG" alt="Avatar">
+          <h1>Login forma</h1>
+          <h3>za prijavu ispita</h3>
+        </div>
+        <div class="flip-card-back">
+          <h1 id="infoLF" style="font-size:2vw;">Login forma</h1>
+          <div class="modal_container">
+            <div class="modal" style="margin-top:10vh;height: 40vh;">
+              <span class="modal_heading" style="display:none;">
+                Unesite svoje podatke
+              </span>
+              <form id="loginForm" method="POST">
+
+                Username/ Broj indeksa:<br><input type="text" id="usernameL" required style="margin-top:5vh;"><br>
+                Password/ Lozinka:<br><input type="password" id="passL" required><br>
+                <input type="submit" id="loginL" class="btnRegister" value="LOGIN"
+                  style="margin-top:1.5vw;font-size: 1.6vw"><br>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" style="margin-left:75%;margin-top:-80vh;">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="../images/exam1.PNG" alt="Avatar">
+          <h1>Vas Nalog</h1>
+        </div>
+        <div class="flip-card-back">
+          <h2>Vas Nalog</h2>
+          <p id="vest" style="font-size:1.4vw;padding:1vw;">
+            Na Vasem Nalogu mozete da cekirate ispite koje zelite da prijavite.
+            Svi cekirani predmeti ce se pojaviti na display-u
+            iznad, a mocicete i da ih iscekirate iz liste.
+            <br>Konacna lista prijavljenih
+            predmeta za polaganje ce se nalaziti ispod ponudjenih ispita.
+          </p>
+          <div class="modal_container">
+            <div class="modal1" style="height:25%;">
+              <form>
+                <input type="submit" class="btnRegister" id="nalogB" name="nalog" value="NALOG" onmousedown="portal()"
+                  style="margin-top:1.2vw;font-size: 1.6vw; border-radius: 1vw; width: 100%;">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nalog" id="nalog">
+    <div class="card" style="text-align:center;font-size:2vw;">
+      <img src="../images/exam2.png" alt="Avatar" height="45%;" width="100%">
+      <p id="imeStudenta">Ime</p>
+      <p id="prezimeStudenta">Prezime</p>
+      <p id="indexStudenta">Broj indeksa</p>
+    </div>
+    <div class="modalNalog">
+      <div>
+        <input type="text" id="prijavaIspita" style="width:70%;height: 5vh;border: 2px solid #222;
+          border-radius: 1vw;padding-left: 1vw;margin-top:5vh;
+          box-shadow: 0px 0px 2px 2px black;font-size: 2.5vw;" readonly>
+      </div>
+      <div id="ispiti">
+
+        <form>
+          <span style="font-size: 1.6vw;">JavaScript</span><input type="checkbox" name="predmet1" value="JavaScript"
+            class="isp" style="height:2.8vh;">
+          <span style="font-size: 1.6vw;"> JQuery</span><input type="checkbox" class="isp" id="JQ" name="predmet2"
+            value="JQuery" style="height:2.8vh;">
+          <span style="font-size: 1.6vw;">React</span><input type="checkbox" class="isp" name="predmet3" value="React"
+            style="height:2.8vh;">
+          <span style="font-size: 1.6vw;">Angular</span><input type="checkbox" class="isp" name="predmet4"
+            value="Angular" style="height:2.8vh;">
+          <span style="font-size: 1.6vw;">Node.js</span><input type="checkbox" class="isp" name="predmet5"
+            value="Node.js" style="height: 2.8vh;"> <br><br>
+          <input type="submit" class="btnRegister" value="SUBMIT" id="chButton"
+            style="margin-top:1.2vw;font-size: 1.6vw; border-radius: 1vw; width: 80%;margin-bottom:-1vw;"><br>
+        </form>
+      </div>
+      <p id="sta" style="font-size:2vw;font-weight:bold;color: orangered;background:white;"></p>
+      <p id="saLS" style="font-size:3vw;font-weight:bold;color: orangered;background:white;"></p>
+    </div>
+  </div>
+  <footer>
+    <p>Created by: <i style="padding-left:1.5vw;">Natalija Stanimirovic</i></p>
+  </footer>
+  
+  <script src="../JAVASCRIPT/prijava.js"></script>
+  
+</body>
+
+</html>

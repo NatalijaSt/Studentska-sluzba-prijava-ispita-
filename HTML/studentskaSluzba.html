@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Studentska sluzba - prijava ispita</title>
+
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header class="head-container">
+        <div class="head-content">
+            <span class="head">Java<i>Script</i> academy</span>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#"><strong>Home</strong></a></li>
+            <li><a href="#about">O nama</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+
+        </ul>
+    </nav>
+    <section id="about" class="about">
+        <h1>Studentska sluzba JavaScript akademije</h1>
+        <div><strong>Služba za studentske poslove</strong> obavlja poslove vezane
+            za studente svih nivoa studija:<br>
+            upis studenata,<br>
+            evidenciju studenata,<br>
+            izradu rasporeda časova,<br>
+            prijavu ispita,<br>
+            organizaciju ispita i kolokvijuma,<br>
+            overu semestara,<br>
+            izdavanje svih vrsta diploma,<br>
+            izdavanje svih vrsta javnih isprava studenata,<br>
+            izdavanje raznih vrsta potvrda i uverenja studentima,<br>
+            poslove u vezi sa studentskim standardom (krediti, smeštaj, prevoz).
+        </div>
+        <div class="about2">Prijava ispita se vrši iskljucivo putem <br>on-line portala <a
+                href="#login"><strong>e-student</strong></a>.<br>
+            <br>Za sve ostale studentske poslove i pitanja pogledajte: <br>
+            <br><a href="#contact">Radno vreme studentske sluzbe i kontakt informacije</a>
+        </div>
+        <div>Služba za studentske poslove je smeštena u prizemlju objekta JavaScript akademije.
+            <br>Tu student može:<br>
+            da dobije uverenje o redovnom studiranju,<br>
+            da dobije potvrdu o položenim ispitima,<br>
+            da podigne originalna dokumenta na revers,<br>
+            da podnese molbu o priznavanju ispita,<br>
+            da podigne rešenje o priznavanju ispita položenih na drugim fakultetima,<br>
+            da dobije informacije o terminima polaganja ispita,<br>
+            da preda zahtev za dobijanje uverenja o diplomiranju i dobijanja diplome.<br>
+
+        </div>
+    </section>
+    <section id="login" class="login">
+        <h1 class="log">e-student <span style="font-size:4.5vw;padding-left: 2vw;">portal</span></h1>
+        <button class="log" onclick="window.location.replace('prijavaIspita.html')"><a href="prijavaIspita.html"
+                class="registerLink">
+                <img src="../images/student1.ico" alt="slicicaStudenta"><br> Prijava ispita</a></button>
+    </section>
+
+    ​<section>
+        <div id="slideS" class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="../images/informatika1.JPG" style="width:100%">
+                <div class="text">Udjite u svet JavaScript-a</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="../images/informatika2.JPG" style="width:100%">
+                <div class="text">Uvek u sluzbi svojih studenata</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="../images/informatika3.JPG" style="width:100%">
+                <div class="text">Sve informacije na dohvat ruke</div>
+            </div>
+            <button class="btn-prev" onclick="​plusSlides(-1)"> < </button>
+             <button class="btn-next" onclick="​plusSlides(1)"> > </button>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <p class="logo">JavaScript ACADEMY</p>
+        <p class="cont2"><span style="font-size:2vw;font-weight:bold;">Studentska sluzba</span><br>
+            <br>Radno vreme:<br>
+            Ponedeljak - Petak:
+            od 09:00 do 17:00h
+        </p>
+        <p>Adresa:
+            Akademska bb,<br>
+            11000 Beograd<br><br>
+
+            Email: studentska.sluzba@jsacademy.edu.rs
+        </p>
+    </section>
+    <footer>
+        <p>Created by: <i style="padding-left:1.5vw;">Natalija Stanimirovic</i></p>
+    </footer>
+
+    <script>
+        ////////////////////////////////////////////////////////////
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 5000);
+        }
+        ////////////////////////////////////////////////////////
+    </script>
+
+</body>
+
+</html>
