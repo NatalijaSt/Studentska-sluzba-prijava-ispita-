@@ -10,7 +10,7 @@
   prijavljenim ispitima se smestaju na localStorage.
   - Pri razvoju projekta korisceni su: HTML, CSS, JavaScript (i u ECMA5 i u ECMA6 formatu) i JQuery.
   - Struktura projekta je sledeca - postoje cetiri foldera:
-    1. HTML - gde se nalaze dva fajla: studentskaSluzba.html (koja je i pocetna stranica sajta) i prijavaIspita.html
-    2. CSS - gde se takodje nalaze dva fajla: style.css i flip.css
-    3. JAVASCRIPT - gde se nalazi jedan fajl: prijava.js
-    4. IMAGES - folder gde se nalaze slike i ikonice potrebne za funkcionisanje i dizajn sajta.
+    - HTML - gde se nalaze dva fajla: studentskaSluzba.html (koja je i pocetna stranica sajta) i prijavaIspita.html
+    - CSS - gde se takodje nalaze dva fajla: style.css i flip.css
+    - JAVASCRIPT - gde se nalazi jedan fajl: prijava.js
+    - IMAGES - folder gde se nalaze slike i ikonice potrebne za funkcionisanje i dizajn sajta.
