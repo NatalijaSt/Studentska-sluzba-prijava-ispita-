@@ -119,10 +119,15 @@ function login(event) {
         document.getElementById("infoLF").innerHTML = `Student ${firstname} ${lastname} je uspesno ulogovan`;
 
         users.forEach(user => {
-            document.getElementById("imeStudenta").innerHTML = `${user.firstname}`;
-            document.getElementById("prezimeStudenta").innerHTML = `${user.lastname}`;
-            document.getElementById("indexStudenta").innerHTML = `${user.username}`;
-
+            document.getElementById("imeStudenta").innerHTML = `${firstname}`;
+            document.getElementById("prezimeStudenta").innerHTML = `${lastname}`;
+            document.getElementById("indexStudenta").innerHTML = `${username}`;
+            if(user.username === username && user.pass === pass){
+            document.getElementById("saLS").innerHTML = `${user.ispiti}`;
+            if(!user.ispiti){
+                document.getElementById("saLS").innerHTML = 'Nemate prijavljene ispite!';
+            }
+            }
         });
     } else {
         document.getElementById("infoLF").innerHTML = `Uneti su pogresni podaci!`;
@@ -167,6 +172,7 @@ $(document).ready(function () {
         const username = $("#usernameL").val();
         const pass = $("#passL").val();
         let ispiti = z;
+
         const newUser = {
             firstname: firstname,
             lastname: lastname,
@@ -181,6 +187,7 @@ $(document).ready(function () {
         if (pass == '') {
             return;
         }
+        
 
         if (localStorage.getItem("users")) {
             users = JSON.parse(localStorage.getItem("users"));
